@@ -4,7 +4,9 @@ function colorClock() {
   var minutes = today.getMinutes();
   var seconds = today.getSeconds();
   
-  // var clockHeight = ('.bottom').width();
+  var elmnt = document.getElementById('bottom');
+  var clockWidth = elmnt.clientWidth;
+  // console.log(clockWidth);
   var days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   var hexColor = '#' + hours + minutes + seconds;
   
@@ -17,12 +19,16 @@ function colorClock() {
   if(hours < 10) {
     hours = '0' + hours;
   }
+
+  var persentage = (clockWidth * seconds) / 59;
+  // console.log(persentage);
   
   document.getElementById('day').innerHTML = days[today.getDay()];
   document.getElementById('hour').innerHTML = hours;
   document.getElementById('minute').innerHTML = minutes;
   document.getElementById('second').innerHTML = seconds;
   document.body.style.background = hexColor;
+  document.getElementById('time').style.width = persentage + "px";
   
   
   setTimeout(function() {
