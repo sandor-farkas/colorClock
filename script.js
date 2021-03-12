@@ -20,15 +20,15 @@ function colorClock() {
     hours = '0' + hours;
   }
 
-  var persentage = (clockWidth * seconds) / 59;
-  // console.log(persentage);
+  var percentage = (clockWidth * seconds) / 59;
+  // console.log(percentage);
   
   document.getElementById('day').innerHTML = days[today.getDay()];
   document.getElementById('hour').innerHTML = hours;
   document.getElementById('minute').innerHTML = minutes;
   document.getElementById('second').innerHTML = seconds;
   document.body.style.background = hexColor;
-  document.getElementById('time').style.width = persentage + "px";
+  document.getElementById('time').style.width = percentage + "px";
   
   
   setTimeout(function() {
